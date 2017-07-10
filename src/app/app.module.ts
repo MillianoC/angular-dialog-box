@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { DialogService } from "./services/dialog.service";
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -10,7 +13,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    DialogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
