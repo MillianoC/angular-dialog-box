@@ -30,23 +30,26 @@ export class AppComponent implements OnInit {
 
     // NOTE: DIALOG_SERVICE_NEED
     getDialog() {
-        this.dialogService.getDialog().then( (dialog) => {
-            this.dialog = dialog;
-        })
+        this.dialog = DialogService.getDialog();
+        console.log("run get");
+        // this.dialogService.getDialog().then( (dialog) => {
+        //     this.dialog = dialog;
+        // })
     }
 
     // NOTE: DIALOG_SERVICE_NEED
     updateDialog(newDialog: string) {
-        this.dialogService.setDialog(newDialog).then( (dialog) => {
-            this.dialog = dialog;
-        })
+        this.dialog = DialogService.setDialog(newDialog);
+        console.log("run set");
+        // this.dialogService.setDialog(newDialog).then( (dialog) => {
+        //     this.dialog = dialog;
+        // })
     }
 
     // NOTE: DIALOG_SERVICE_NEED
     clearDialog() {
-        this.dialogService.clearDialog().then( (dialog) => {
-            this.dialog = dialog;
-        });
+        this.dialog = DialogService.clearDialog();
+        console.log("run clear");
     }
 
 }

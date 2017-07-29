@@ -1,29 +1,30 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
-export class DialogService implements OnInit {
+export class DialogService {
 
     //
-    dialog: string;
+    private static dialog: string = null;
 
-    ngOnInit() {
-        this.dialog = null;
+    //
+    public static getDialog(): string {
+        console.log("run service get");
+        return DialogService.dialog;
     }
 
     //
-    getDialog(): Promise<string> {
-        return Promise.resolve(this.dialog);
+    public static setDialog(newDialog: string): string {
+        console.log("run service set");
+        // dialog = newDialog;
+        // return Promise.resolve(this.dialog);
+        DialogService.dialog = newDialog;
+        return DialogService.dialog;
     }
 
     //
-    setDialog(newDialog: string): Promise<string> {
-        this.dialog = newDialog;
-        return Promise.resolve(this.dialog);
-    }
-
-    //
-    clearDialog(): Promise<string> {
-        this.dialog = null;
-        return Promise.resolve(this.dialog);
+    public static clearDialog(): string {
+        console.log("run service clear");
+        DialogService.dialog = null;
+        return DialogService.dialog;
     }
 }
