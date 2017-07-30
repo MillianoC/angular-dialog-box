@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        console.log("Init app component");
 
         // NOTE: DIALOG_SERVICE_NEED
         // This will load the default message from the dialogService
