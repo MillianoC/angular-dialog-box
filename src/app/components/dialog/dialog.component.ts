@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'dialog',
+  selector: 'dialog-box',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })
